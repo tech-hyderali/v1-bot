@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #chat-container {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        #chat-messages {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+            background-color: white;
+        }
+        #user-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+        .bot-message {
+            background-color: #e1f5fe;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .user-message {
+            background-color: #e8f5e9;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <input type="text" id="user-input" placeholder="Type your health concern...">
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+
+        function addMessage(message, isUser = false) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add(isUser ? 'user-message' : 'bot-message');
+            messageElement.textContent = message;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getBotResponse(input) {
+            input = input.toLowerCase();
+            if (input.includes('headache')) {
+                return "For headaches, try the following:\n1. Rest in a quiet, dark room\n2. Apply a cold or warm compress to your head\n3. Stay hydrated\n4. Consider over-the-counter pain relievers if needed";
+            } else if (input.includes('fever')) {
+                return "If you have a fever:\n1. Rest and stay hydrated\n2. Take acetaminophen or ibuprofen to reduce fever\n3. Use a lukewarm compress\n4. Seek medical attention if fever persists or is very high";
+            } else if (input.includes('cold')) {
+                return "For a common cold:\n1. Get plenty of rest\n2. Drink lots of fluids\n3. Use over-the-counter cold medications for symptom relief\n4. Try throat lozenges or honey for sore throat";
+            } else {
+                return "I'm sorry, I don't have specific information about that. For personalized medical advice, please consult a healthcare professional.";
+            }
+        }
+
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value) {
+                const userMessage = this.value;
+                addMessage(userMessage, true);
+                this.value = '';
+
+                setTimeout(() => {
+                    const botResponse = getBotResponse(userMessage);
+                    addMessage(botResponse);
+                }, 500);
+            }
+        });
+
+        // Initial bot message
+        addMessage("Welcome to the Healthcare Chatbot! How can I assist you today?");
+    </script>
+</body>
+</html>
