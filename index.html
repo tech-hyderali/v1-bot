@@ -12,10 +12,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #f0f0f0; 
         }
         #chat-container {
-            width: 300px;
+            width: 500px;
             border: 1px solid #ccc;
             border-radius: 5px;
             overflow: hidden;
@@ -66,17 +66,132 @@
         }
 
         function getBotResponse(input) {
-            input = input.toLowerCase();
-            if (input.includes('headache')) {
-                return "For headaches, try the following:\n1. Rest in a quiet, dark room\n2. Apply a cold or warm compress to your head\n3. Stay hydrated\n4. Consider over-the-counter pain relievers if needed";
-            } else if (input.includes('fever')) {
-                return "If you have a fever:\n1. Rest and stay hydrated\n2. Take acetaminophen or ibuprofen to reduce fever\n3. Use a lukewarm compress\n4. Seek medical attention if fever persists or is very high";
-            } else if (input.includes('cold')) {
-                return "For a common cold:\n1. Get plenty of rest\n2. Drink lots of fluids\n3. Use over-the-counter cold medications for symptom relief\n4. Try throat lozenges or honey for sore throat";
-            } else {
-                return "I'm sorry, I don't have specific information about that. For personalized medical advice, please consult a healthcare professional.";
-            }
-        }
+    input = input.toLowerCase();
+    if (input.includes('headache')) {
+        return "For headaches, try the following:\n1. Rest in a quiet, dark room\n2. Apply a cold or warm compress to your head\n3. Stay hydrated\n4. Consider over-the-counter pain relievers if needed";
+    } else if (input.includes('fever')) {
+        return "If you have a fever:\n1. Rest and stay hydrated\n2. Take acetaminophen or ibuprofen to reduce fever\n3. Use a lukewarm compress\n4. Seek medical attention if fever persists or is very high";
+    } else if (input.includes('cold')) {
+        return "For a common cold:\n1. Get plenty of rest\n2. Drink lots of fluids\n3. Use over-the-counter cold medications for symptom relief\n4. Try throat lozenges or honey for sore throat";
+    } else if (input.includes('cough')) {
+        return "For a cough:\n1. Stay hydrated\n2. Use cough drops or lozenges\n3. Consider a cough suppressant or expectorant\n4. Use a humidifier or inhale steam";
+    } else if (input.includes('sore throat')) {
+        return "For a sore throat:\n1. Drink warm liquids\n2. Gargle with salt water\n3. Use throat lozenges or sprays\n4. Consider over-the-counter pain relievers";
+    } else if (input.includes('allergies')) {
+        return "For allergies:\n1. Avoid known allergens\n2. Use antihistamines\n3. Try a nasal saline spray\n4. Consider allergy shots if recommended by a doctor";
+    } else if (input.includes('stomach ache')) {
+        return "For a stomach ache:\n1. Eat bland foods\n2. Avoid fatty or spicy foods\n3. Stay hydrated\n4. Use over-the-counter antacids if needed";
+    } else if (input.includes('nausea')) {
+        return "For nausea:\n1. Eat small, frequent meals\n2. Avoid strong odors\n3. Stay hydrated\n4. Consider over-the-counter medications like ginger or antihistamines";
+    } else if (input.includes('diarrhea')) {
+        return "For diarrhea:\n1. Stay hydrated\n2. Eat bland foods like bananas, rice, applesauce, and toast\n3. Avoid dairy and fatty foods\n4. Consider over-the-counter anti-diarrheal medications";
+    } else if (input.includes('constipation')) {
+        return "For constipation:\n1. Eat high-fiber foods\n2. Drink plenty of water\n3. Exercise regularly\n4. Consider over-the-counter laxatives if needed";
+    } else if (input.includes('heartburn')) {
+        return "For heartburn:\n1. Avoid spicy and fatty foods\n2. Eat smaller meals\n3. Stay upright after eating\n4. Consider over-the-counter antacids";
+    } else if (input.includes('insomnia')) {
+        return "For insomnia:\n1. Maintain a regular sleep schedule\n2. Create a relaxing bedtime routine\n3. Avoid caffeine and electronics before bed\n4. Consider over-the-counter sleep aids if needed";
+    } else if (input.includes('anxiety')) {
+        return "For anxiety:\n1. Practice deep breathing exercises\n2. Engage in regular physical activity\n3. Avoid caffeine and alcohol\n4. Consider talking to a mental health professional";
+    } else if (input.includes('depression')) {
+        return "For depression:\n1. Stay connected with loved ones\n2. Engage in physical activity\n3. Maintain a regular routine\n4. Consider talking to a mental health professional";
+    } else if (input.includes('back pain')) {
+        return "For back pain:\n1. Maintain good posture\n2. Apply heat or cold packs\n3. Stay active with gentle exercises\n4. Consider over-the-counter pain relievers";
+    } else if (input.includes('muscle pain')) {
+        return "For muscle pain:\n1. Rest the affected area\n2. Apply ice or heat\n3. Stretch gently\n4. Consider over-the-counter pain relievers";
+    } else if (input.includes('joint pain')) {
+        return "For joint pain:\n1. Rest the affected joint\n2. Apply ice or heat\n3. Use over-the-counter pain relievers\n4. Consider physical therapy exercises";
+    } else if (input.includes('earache')) {
+        return "For an earache:\n1. Apply a warm compress to the ear\n2. Use over-the-counter ear drops\n3. Stay hydrated\n4. Seek medical attention if pain persists or is severe";
+    } else if (input.includes('toothache')) {
+        return "For a toothache:\n1. Rinse with warm salt water\n2. Use over-the-counter pain relievers\n3. Apply a cold compress to the outside of your cheek\n4. See a dentist if pain persists";
+    } else if (input.includes('rash')) {
+        return "For a rash:\n1. Keep the area clean and dry\n2. Avoid scratching\n3. Use over-the-counter anti-itch creams\n4. Seek medical attention if rash persists or worsens";
+    } else if (input.includes('sunburn')) {
+        return "For sunburn:\n1. Apply aloe vera or moisturizing lotion\n2. Stay hydrated\n3. Take cool baths or showers\n4. Consider over-the-counter pain relievers";
+    } else if (input.includes('cuts')) {
+        return "For minor cuts:\n1. Clean the wound with water\n2. Apply an antibiotic ointment\n3. Cover with a sterile bandage\n4. Seek medical attention for deep or infected wounds";
+    } else if (input.includes('bruises')) {
+        return "For bruises:\n1. Apply a cold compress\n2. Elevate the affected area\n3. Rest and avoid further injury\n4. Consider over-the-counter pain relievers";
+    } else if (input.includes('sprains')) {
+        return "For sprains:\n1. Rest the affected area\n2. Apply ice to reduce swelling\n3. Use a compression bandage\n4. Elevate the injured limb";
+    } else if (input.includes('burns')) {
+        return "For minor burns:\n1. Cool the burn under running water\n2. Apply aloe vera or burn ointment\n3. Cover with a sterile, non-stick bandage\n4. Seek medical attention for severe burns";
+    } else if (input.includes('blisters')) {
+        return "For blisters:\n1. Keep the blister clean and dry\n2. Avoid popping the blister\n3. Cover with a bandage if needed\n4. Use over-the-counter blister pads if necessary";
+    } else if (input.includes('athlete\'s foot')) {
+        return "For athlete's foot:\n1. Keep feet clean and dry\n2. Use antifungal creams or sprays\n3. Wear breathable footwear\n4. Avoid sharing towels or shoes";
+    } else if (input.includes('yeast infection')) {
+        return "For a yeast infection:\n1. Use over-the-counter antifungal treatments\n2. Wear breathable, loose-fitting clothing\n3. Avoid scented products\n4. Seek medical attention if symptoms persist";
+    } else if (input.includes('urinary tract infection')) {
+        return "For a urinary tract infection:\n1. Drink plenty of water\n2. Avoid caffeine and alcohol\n3. Use over-the-counter pain relievers\n4. Seek medical attention for antibiotics";
+    } else if (input.includes('acne')) {
+        return "For acne:\n1. Cleanse your face twice daily\n2. Use non-comedogenic products\n3. Avoid touching your face\n4. Consider over-the-counter acne treatments";
+    } else if (input.includes('eczema')) {
+        return "For eczema:\n1. Keep skin moisturized\n2. Use gentle, fragrance-free products\n3. Avoid hot showers\n4. Consider over-the-counter hydrocortisone cream";
+    } else if (input.includes('psoriasis')) {
+        return "For psoriasis:\n1. Keep skin moisturized\n2. Use medicated creams\n3. Avoid triggers like stress and smoking\n4. Seek medical attention for severe cases";
+    } else if (input.includes('rosacea')) {
+        return "For rosacea:\n1. Avoid triggers like spicy foods and alcohol\n2. Use gentle skincare products\n3. Protect your skin from the sun\n4. Consider topical or oral medications";
+    } else if (input.includes('dry skin')) {
+        return "For dry skin:\n1. Use a gentle, fragrance-free moisturizer\n2. Avoid hot showers\n3. Drink plenty of water\n4. Use a humidifier if needed";
+    } else if (input.includes('oily skin')) {
+        return "For oily skin:\n1. Use oil-free, non-comedogenic products\n2. Cleanse your face twice daily\n3. Avoid heavy, greasy products\n4. Consider using blotting papers";
+    } else if (input.includes('hair loss')) {
+        return "For hair loss:\n1. Avoid tight hairstyles\n2. Use gentle hair care products\n3. Eat a balanced diet\n4. Consider over-the-counter treatments like minoxidil";
+    } else if (input.includes('dandruff')) {
+        return "For dandruff:\n1. Use an anti-dandruff shampoo\n2. Avoid hair products with alcohol\n3. Keep your scalp moisturized\n4. Consider seeing a dermatologist if it persists";
+    } else if (input.includes('hemorrhoids')) {
+        return "For hemorrhoids:\n1. Eat high-fiber foods\n2. Stay hydrated\n3. Avoid straining during bowel movements\n4. Use over-the-counter creams or sitz baths";
+    } else if (input.includes('motion sickness')) {
+        return "For motion sickness:\n1. Sit in a stable position\n2. Focus on the horizon\n3. Avoid heavy meals before travel\n4. Consider over-the-counter medications like dimenhydrinate";
+    } else if (input.includes('cold sores')) {
+        return "For cold sores:\n1. Apply a cold, damp cloth\n2. Use over-the-counter antiviral creams\n3. Avoid triggers like stress and sunlight\n4. Stay hydrated";
+    } else if (input.includes('hives')) {
+        return "For hives:\n1. Avoid known allergens\n2. Use over-the-counter antihistamines\n3. Apply cool compresses\n4. Seek medical attention if severe or persistent";
+    } else if (input.includes('bed bugs')) {
+        return "For bed bugs:\n1. Wash and dry bedding on high heat\n2. Vacuum regularly\n3. Use mattress encasements\n4. Consider professional pest control";
+    } else if (input.includes('lice')) {
+        return "For lice:\n1. Use over-the-counter lice treatments\n2. Comb hair with a fine-toothed comb\n3. Wash clothing and bedding on high heat\n4. Avoid sharing personal items";
+    } else if (input.includes('scabies')) {
+        return "For scabies:\n1. Use prescription creams\n2. Wash clothing and bedding on high heat\n3. Avoid close contact with infected individuals\n4. Seek medical attention for treatment";
+    } else if (input.includes('ringworm')) {
+        return "For ringworm:\n1. Keep the area clean and dry\n2. Use over-the-counter antifungal creams\n3. Avoid sharing personal items\n4. Seek medical attention if it persists";
+    } else if (input.includes('pinworms')) {
+        return "For pinworms:\n1. Wash hands regularly\n2. Keep fingernails short\n3. Wash bedding and clothing on high heat\n4. Seek medical attention for treatment";
+    } else if (input.includes('migraines')) {
+        return "For migraines:\n1. Rest in a quiet, dark room\n2. Apply a cold compress to your head\n3. Stay hydrated\n4. Consider over-the-counter or prescription medications";
+    } else if (input.includes('sinusitis')) {
+        return "For sinusitis:\n1. Stay hydrated\n2. Use a humidifier\n3. Apply warm compresses to your face\n4. Consider over-the-counter decongestants";
+    } else if (input.includes('bronchitis')) {
+        return "For bronchitis:\n1. Stay hydrated\n2. Rest and avoid smoke\n3. Use a humidifier\n4. Consider over-the-counter cough medicines";
+    } else if (input.includes('asthma')) {
+        return "For asthma:\n1. Use prescribed inhalers\n2. Avoid known triggers\n3. Maintain a healthy lifestyle\n4. Seek medical attention for a tailored treatment plan";
+    } else if (input.includes('pneumonia')) {
+        return "For pneumonia:\n1. Stay hydrated\n2. Rest and avoid smoke\n3. Use prescribed medications\n4. Seek medical attention for severe symptoms";
+    } else if (input.includes('flu')) {
+        return "For the flu:\n1. Rest and stay hydrated\n2. Use over-the-counter medications for symptom relief\n3. Avoid contact with others\n4. Seek medical attention if symptoms worsen";
+    } else if (input.includes('high blood pressure')) {
+        return "For high blood pressure:\n1. Eat a healthy diet low in salt\n2. Exercise regularly\n3. Avoid smoking and excessive alcohol\n4. Take prescribed medications";
+    } else if (input.includes('high cholesterol')) {
+        return "For high cholesterol:\n1. Eat a heart-healthy diet\n2. Exercise regularly\n3. Avoid smoking\n4. Take prescribed medications";
+    } else if (input.includes('diabetes')) {
+        return "For diabetes:\n1. Monitor blood sugar levels\n2. Eat a balanced diet\n3. Exercise regularly\n4. Take prescribed medications";
+    } else if (input.includes('thyroid issues')) {
+        return "For thyroid issues:\n1. Take prescribed medications\n2. Eat a balanced diet\n3. Monitor thyroid levels regularly\n4. Consult with a healthcare professional";
+    } else if (input.includes('menstrual cramps')) {
+        return "For menstrual cramps:\n1. Use a heating pad on your abdomen\n2. Stay hydrated\n3. Exercise regularly\n4. Consider over-the-counter pain relievers";
+    } else if (input.includes('pregnancy symptoms')) {
+        return "For pregnancy symptoms:\n1. Eat small, frequent meals\n2. Stay hydrated\n3. Rest as needed\n4. Consult with a healthcare professional";
+    } else if (input.includes('menopause symptoms')) {
+        return "For menopause symptoms:\n1. Eat a healthy diet\n2. Exercise regularly\n3. Avoid triggers like caffeine and alcohol\n4. Consider hormone replacement therapy if recommended";
+    } else if (input.includes('childbirth recovery')) {
+        return "For childbirth recovery:\n1. Rest and stay hydrated\n2. Eat a nutritious diet\n3. Use over-the-counter pain relievers\n4. Follow your healthcare provider's advice";
+    } else {
+        return "I'm sorry, I don't have specific information about that. For personalized medical advice, please consult a healthcare professional.";
+    }
+}
+
 
         userInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter' && this.value) {
@@ -85,7 +200,7 @@
                 this.value = '';
 
                 setTimeout(() => {
-                    const botResponse = getBotResponse(userMessage);
+                     const botResponse = getBotResponse(userMessage);
                     addMessage(botResponse);
                 }, 500);
             }
